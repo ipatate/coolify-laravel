@@ -3,17 +3,3 @@ services:
     build: .
     volumes:
       - './storage:/var/www/html/storage'
-  scheduler:
-    image: 'username/image:latest'
-    command: [ "php", "/var/www/html/artisan", "schedule:work" ]
-    volumes:
-      - './storage:/var/www/html/storage'
-    environment:
-      PHP_FPM_POOL_NAME: app_scheduler
-  horizon:
-    image: 'username/image:latest'
-    command: [ "php", "/var/www/html/artisan", "horizon" ]
-    volumes:
-      - ./storage:/var/www/html/storage
-    environment:
-      PHP_FPM_POOL_NAME: "app_horizon"
